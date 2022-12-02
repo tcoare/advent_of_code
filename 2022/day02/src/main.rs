@@ -37,6 +37,44 @@ fn part1() {
     println!("{answer}");
 }
 
+fn part2() {
+    let hands = include_str!("input.txt")
+        .lines();
+
+
+    let mut answer: i32 = 0;
+    for throw in hands {
+        let p1 = throw.chars().nth(0).unwrap();
+        let p2 = throw.chars().nth(2).unwrap();
+
+        // A for Rock, B for Paper, and C for Scissors
+        // X for lose, Y for draw, and Z for win
+        answer += match p1 {
+            'A' => match p2 {
+                'X' => 3,
+                'Y' => 4,
+                'Z' => 8,
+                _ => panic!()
+            },
+            'B' => match p2 {
+                'X' => 1,
+                'Y' => 5,
+                'Z' => 9,
+                _ => panic!()
+            },
+            'C' => match p2 {
+                'X' => 2,
+                'Y' => 6,
+                'Z' => 7,
+                _ => panic!()
+            }
+            _ => panic!()
+        };
+    } 
+    println!("{answer}");
+}
+
 fn main() {
     part1();
+    part2();
 }
