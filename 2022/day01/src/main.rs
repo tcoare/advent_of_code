@@ -1,10 +1,9 @@
 fn part1() {
-    let numbers = include_str!("input.txt")
-        .lines();
+    let numbers = include_str!("input.txt").lines();
 
     let mut calories: Vec<i32> = vec![];
     let mut count: i32 = 0;
-    
+
     for cal in numbers {
         if cal.is_empty() {
             // empty line is break in elves
@@ -20,12 +19,11 @@ fn part1() {
 }
 
 fn part2() {
-    let numbers = include_str!("input.txt")
-        .lines();
+    let numbers = include_str!("input.txt").lines();
 
     let mut calories: Vec<i32> = vec![];
     let mut count: i32 = 0;
-    
+
     for cal in numbers {
         if cal.is_empty() {
             // empty line is break in elves
